@@ -1,0 +1,6 @@
+{
+  "name": "Messi Goat FC - Player & Match Hub",
+  "description": "Comprehensive mobile-first club player management, team balancing, squad selection, fixtures, and individual performance stats for Messi Goat FC.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

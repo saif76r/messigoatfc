@@ -1,0 +1,63 @@
+{
+  "entities": {
+    "player": {
+      "title": "Player",
+      "description": "Club player profile with stats and squad assignment for Messi Goat FC",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string", "maxLength": 100 },
+        "email": { "type": "string", "maxLength": 120 },
+        "jerseyNumber": { "type": "number" },
+        "teamName": { "type": "string", "maxLength": 100 },
+        "squadName": { "type": "string", "maxLength": 100 },
+        "ovr": { "type": "number" },
+        "position": { "type": "string", "maxLength": 10 },
+        "preferredFoot": { "type": "string", "maxLength": 10 },
+        "phone": { "type": "string", "maxLength": 30 },
+        "isCaptain": { "type": "boolean" },
+        "matchesPlayed": { "type": "number" },
+        "goals": { "type": "number" },
+        "assists": { "type": "number" },
+        "cleanSheets": { "type": "number" },
+        "motmAwards": { "type": "number" },
+        "yellowCards": { "type": "number" },
+        "redCards": { "type": "number" },
+        "isRegisteredByUser": { "type": "boolean" },
+        "notes": { "type": "string", "maxLength": 500 },
+        "joinedDate": { "type": "string", "maxLength": 30 }
+      },
+      "required": ["name", "teamName", "ovr", "position"]
+    },
+    "match": {
+      "title": "Match",
+      "description": "Football match schedule and result record",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string", "maxLength": 120 },
+        "team1Name": { "type": "string", "maxLength": 100 },
+        "team2Name": { "type": "string", "maxLength": 100 },
+        "date": { "type": "string", "maxLength": 30 },
+        "time": { "type": "string", "maxLength": 20 },
+        "venue": { "type": "string", "maxLength": 150 },
+        "status": { "type": "string", "maxLength": 20 },
+        "referee": { "type": "string", "maxLength": 100 },
+        "notes": { "type": "string", "maxLength": 500 },
+        "motmPlayerId": { "type": "string", "maxLength": 100 },
+        "motmPlayerName": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["title", "team1Name", "team2Name", "date", "status"]
+    }
+  },
+  "firestore": {
+    "/players/{playerId}": {
+      "schema": "player",
+      "description": "Collection of all club players in Messi Goat FC"
+    },
+    "/matches/{matchId}": {
+      "schema": "match",
+      "description": "Collection of scheduled and completed matches"
+    }
+  }
+}
